@@ -36,6 +36,7 @@ custom_layer_init(Application_Links * App)
     set_custom_hook(App, HookID_BufferViewerUpdate, 0);
     set_custom_hook(App, HookID_RenderCaller, sn_RenderCaller);
     set_custom_hook(App, HookID_BeginBuffer, sn_BeginBuffer);
+    set_custom_hook(App, HookID_NewFile, sn_NewFile);
     set_custom_hook(App, HookID_BufferRegion, sn_BufferRegion);
     
     mapping_init(ThreadContext, &framework_mapping);

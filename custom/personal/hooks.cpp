@@ -1,4 +1,21 @@
 
+BUFFER_HOOK_SIG(sn_NewFile)
+{
+    Scratch_Block scratch(app);
+    String_Const_u8 file_name = push_buffer_base_name(app, scratch, buffer_id);
+    if (string_match(string_postfix(file_name, 2), string_u8_litexpr(".h")) ||
+        string_match(string_postfix(file_name, 4), string_u8_litexpr(".hpp")))
+    {
+        sn_NewCHeaderFile(app, buffer_id, file_name);
+    }
+    else if(string_match(string_postfix(file_name, 4), string_u8_litexpr(".bat")))
+    {
+        sn_NewBATFile(app, buffer_id, file_name);
+    }
+    
+    return(0);
+}
+
 BUFFER_HOOK_SIG(sn_BeginBuffer)
 {
     ProfileScope(app, "[sammynilla] begin buffer");
@@ -14,7 +31,7 @@ BUFFER_HOOK_SIG(sn_BeginBuffer)
         {
             if (string_match(Ext, Extensions.strings[i]))
             {
-                TreatAsCode= true;
+                TreatAsCode = true;
                 break;
             }
         }
