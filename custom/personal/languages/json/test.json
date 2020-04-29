@@ -1,0 +1,30 @@
+{
+    "main": "app.html",
+    "name": "app-name",
+    "description": "Application description here",
+    "version": "1.0.0",
+    "author": "Your Name Here",
+    "keywords": [
+                 "keyword-test-1",
+                 "keyword-test-2",
+                 "keyword-test-3",
+                 "keyword-test-4",
+                 ],
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": ""
+    },
+    "window": {
+        "width": 800,
+        "height": 600,
+        "visible": false,
+        "double_test": 0.5
+    },
+    "dependencies": {
+        "nw": "^0.20.0",
+    },
+    "devDependencies": {
+        "babel-core": "^6.26.0",
+    }
+}

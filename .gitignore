@@ -1,0 +1,15 @@
+﻿4ed.exe
+*.dll
+*.obj
+changes.txt
+LICENSE.txt
+vc140.pdb
+README.txt
+custom_4coder.pdb
+project.4coder
+custom/bin
+custom/generated
+custom/languages
+custom/lexer_generator
+custom/*.*
+one_time.*
