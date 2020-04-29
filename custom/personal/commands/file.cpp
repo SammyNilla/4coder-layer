@@ -28,7 +28,7 @@ sn_NewCHeaderFile(Application_Links * App, Buffer_ID BufferID, String_Const_u8 F
     }
     String_Const_u8 Guard = string_list_flatten(Scratch, GuardList);
     
-    Buffer_Insertion Insert = begin_buffer_insertion_at_buffered(App, BufferID, 0, Scratch, KB(16));
+    Buffer_Insertion Insert = begin_buffer_insertion_at_buffered(App, BufferID, 0, Scratch, 0);
     insertf(&Insert,
             "#if !defined(%.*s)\n"
             "#define %.*s\n"
@@ -46,7 +46,7 @@ sn_NewBATFile(Application_Links * App, Buffer_ID BufferID, String_Const_u8 FileN
 {
     Scratch_Block Scratch(App);
     
-    Buffer_Insertion Insert = begin_buffer_insertion_at_buffered(App, BufferID, 0, Scratch, KB(2));
+    Buffer_Insertion Insert = begin_buffer_insertion_at_buffered(App, BufferID, 0, Scratch, 0);
     insertf(&Insert, "@ECHO OFF\n");
     end_buffer_insertion(&Insert);
 }
