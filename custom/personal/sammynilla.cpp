@@ -13,6 +13,7 @@
 // NOTE(sammynilla): Commands
 #include "commands/build_panel.cpp"
 #include "commands/execution.cpp"
+#include "commands/git.cpp"
 #include "commands/file.cpp"
 #include "commands/project.cpp"
 //|
