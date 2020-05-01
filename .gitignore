@@ -12,3 +12,4 @@ custom/languages
 custom/lexer_generator
 custom/*.*
 one_time.*
+projects.path
