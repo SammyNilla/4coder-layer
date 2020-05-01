@@ -1,13 +1,11 @@
 
-// TODO(sammynilla): Look into making this not go to some random buffer.
-// Would prefer to have it displayed in the compilation buffer.
 CUSTOM_COMMAND_SIG(git_init)
 CUSTOM_DOC("Initializes a git repo in an project's root directory.")
 {
     Scratch_Block Scratch(app);
-    String_Const_u8 OutputBuffer = SCu8("*messages*");
+    String_Const_u8 OutputBuffer = SCu8("*run*");
     String_Const_u8 Command = SCu8("git init");
-    String_Const_u8 HotDir = push_hot_directory(app, Scratch);
+    String_Const_u8 HotDir = current_project.dir;
     
     { // NOTE(sammynilla): Output buffer copy
         u64 size = clamp_top(OutputBuffer.size, sizeof(out_buffer_space));
@@ -27,5 +25,5 @@ CUSTOM_DOC("Initializes a git repo in an project's root directory.")
         hot_directory_space[HotDir.size] = 0;
     }
     
-    execute_previous_cli(app);
+    execute_previous_cli_in_footer_panel(app);
 }

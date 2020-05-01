@@ -1,4 +1,6 @@
 
+#include "cli.cpp"
+
 CUSTOM_COMMAND_SIG(sn_4coder_Startup)
 {
     ProfileScope(app, "[sammynilla] startup");
