@@ -269,18 +269,6 @@ sn_SetInputMapping(Mapping * mapping, i64 global_id, i64 file_id, i64 code_id)
                      KeyCode_Left, KeyCode_Alt);
                 Bind(move_right_alpha_numeric_or_camel_boundary,
                      KeyCode_Right, KeyCode_Alt);
-                Bind(select_surrounding_scope,
-                     KeyCode_LeftBracket, KeyCode_Alt);
-                Bind(select_surrounding_scope_maximal,
-                     KeyCode_LeftBracket, KeyCode_Alt, KeyCode_Shift);
-                Bind(select_prev_scope_absolute,
-                     KeyCode_RightBracket, KeyCode_Alt);
-                Bind(select_prev_top_most_scope,
-                     KeyCode_RightBracket, KeyCode_Alt, KeyCode_Shift);
-                Bind(select_next_scope_absolute,
-                     KeyCode_Quote, KeyCode_Alt);
-                Bind(select_next_scope_after_current,
-                     KeyCode_Quote, KeyCode_Alt, KeyCode_Shift);
             }
             // NOTE(sammynilla): Editing
             {
@@ -315,7 +303,18 @@ sn_SetInputMapping(Mapping * mapping, i64 global_id, i64 file_id, i64 code_id)
                 {
                     Bind(place_in_scope,
                          KeyCode_ForwardSlash, KeyCode_Alt);
-                    // NOTE(sammynilla): delete_current_scope doesn't seem to do anything?
+                    Bind(select_surrounding_scope,
+                         KeyCode_LeftBracket, KeyCode_Alt);
+                    Bind(select_surrounding_scope_maximal,
+                         KeyCode_LeftBracket, KeyCode_Alt, KeyCode_Shift);
+                    Bind(select_prev_scope_absolute,
+                         KeyCode_RightBracket, KeyCode_Alt);
+                    Bind(select_prev_top_most_scope,
+                         KeyCode_RightBracket, KeyCode_Alt, KeyCode_Shift);
+                    Bind(select_next_scope_absolute,
+                         KeyCode_Quote, KeyCode_Alt);
+                    Bind(select_next_scope_after_current,
+                         KeyCode_Quote, KeyCode_Alt, KeyCode_Shift);
                     Bind(delete_current_scope,
                          KeyCode_Minus, KeyCode_Alt);
                 }

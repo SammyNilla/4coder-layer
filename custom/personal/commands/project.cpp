@@ -25,3 +25,10 @@ CUSTOM_DOC("Looks for a project.4coder file in the current directory and tries t
         move_project_path_at_index_to_front(index);
     }
 }
+
+CUSTOM_COMMAND_SIG(setup_new_project)
+CUSTOM_DOC("Queries the user for several configuration options and initializes a new 4coder project with build scripts for every OS.")
+{
+    project_setup_scripts__generic(app, true, false, false);
+    load_project(app);
+}
