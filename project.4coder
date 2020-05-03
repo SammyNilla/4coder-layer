@@ -5,12 +5,9 @@ patterns = {
 "*.c",
 "*.cpp",
 "*.h",
-"*.m",
-"*.mm",
 "*.bat",
 "*.sh",
 "*.4coder",
-"*.txt",
 };
 blacklist_patterns = {
 ".*",
@@ -24,29 +21,23 @@ load_paths = {
  { load_paths_custom, .os = "mac"  },
 };
 
-build_super_x64_win32_custom_release = "build.bat";
+build_super_x64_win32_custom = "build.bat";
+build_lexer_win32_custom = "lex_build.bat";
 build_super_x64_linux  = "custom/bin/buildsuper_x64.sh";
 build_super_x64_mac  = "custom/bin/buildsuper_x64-mac.sh";
-
 
 command_list = {
  { .name = "build super x64",
    .out = "*compilation*", .footer_panel = true, .save_dirty_files = true, .cursor_at_end = true,
-   .cmd = { {build_super_x64_win32_custom_release, .os ="win"  },
+   .cmd = { {build_super_x64_win32_custom, .os ="win"  },
             {build_super_x64_linux , .os ="linux"},
             {build_super_x64_mac , .os ="mac"  }, }, },
 
  { .name = "build C++ lexer generator",
    .out = "*compilation*", .footer_panel = true, .save_dirty_files = true,
-   .cmd = { {"custom\\bin\\build_one_time custom\\languages\\4coder_cpp_lexer_gen.cpp ..\\build", .os ="win" },
-           }, },
- 
- { .name = "build token tester",
-   .out = "*compilation*", .footer_panel = true, .save_dirty_files = true,
-   .cmd = { {"custom\\bin\\build_one_time custom\\languages\\4coder_cpp_lexer_test.cpp ..\\build", .os = "win" },
+   .cmd = { {build_lexer_win32_custom, .os ="win" },
            }, },
 };
 
 fkey_command[1] = "build super x64";
 fkey_command[2] = "build C++ lexer generator";
-fkey_command[3] = "build token tester";
